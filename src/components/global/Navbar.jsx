@@ -38,7 +38,7 @@ const Navbar = () => {
         <>
             <div className="sub-header">
                 <div className="container">
-                    <div className="row">
+                    <div className="row flex justify-between">
                         <div className="col-lg-8 col-md-8">
                             <ul className="info">
                                 <li><i><FontAwesomeIcon icon={faEnvelope} /></i> info@company.com</li>
@@ -56,6 +56,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
+
 
             <header className="header-area header-sticky">
                 <div style={{ margin: 'auto' }} className="container">
