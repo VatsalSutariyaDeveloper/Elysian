@@ -60,7 +60,7 @@ const Properties = () => {
                     <div className="row">
                         <div className="col-lg-12">
                             <span className="breadcrumb">
-                                <Link to="#">Home</Link> / Properties
+                                <Link to="/hero">Home</Link> / Properties
                             </span>
                             <h3>Properties</h3>
                         </div>

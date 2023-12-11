@@ -71,7 +71,7 @@ const ContactUs = () => {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
-                                <span className="breadcrumb"><a href="#">Home</a>  /  Contact Us</span>
+                                <span className="breadcrumb"><a href="hero">Home</a>  /  Contact Us</span>
                                 <h3>Contact Us</h3>
                             </div>
                         </div>
