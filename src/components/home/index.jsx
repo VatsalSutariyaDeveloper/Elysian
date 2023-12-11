@@ -501,7 +501,7 @@ const Hero = () => {
                       <Link to={`/properties-details/${property.index}`}>
                         <div className="item">
                           <img src={property.image} alt="" />
-                          <span className="category">Luxury Villa</span>
+                          <span className="category">{property.category}</span>
                           <h6>{property.price}</h6>
                           <h4>{property.address}</h4>
                           <ul>
