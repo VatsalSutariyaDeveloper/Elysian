@@ -380,7 +380,92 @@ Pre-loader Style
     border-radius: 50%;
 }
 
+/* 
+---------------------------------------------
+Carousel Style
+--------------------------------------------- 
+*/
+.carousel-container {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
 
+.box {
+    max-width: 500px;
+    margin: auto;
+}
+
+.nav_btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    z-index: 4;
+    border: none;
+    opacity: 1;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-left: 3%;
+}
+
+.nav_btn>svg {
+    color: #f5f5f5;
+    width: 25px;
+    height: 25px;
+    position: relative;
+}
+
+.nav_btn_left {
+    left: 0;
+}
+
+.nav_btn_right {
+    right: 0;
+    margin-right: 3%;
+}
+
+.carousel .control-dots {
+    z-index: 3;
+}
+
+.ind {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    list-style: none;
+    border: 2px solid #f5f5f5;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    z-index: 100;
+}
+
+.ind.active {
+    background-color: #fff;
+    transition: 500ms 200ms;
+}
+
+.ind:not(:last-child) {
+    margin-right: 1.4rem;
+}
+
+.carousel .carousel-status {
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #000;
+    font-size: 1.4rem;
+    text-shadow: none;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
 
 /* 
 ---------------------------------------------
@@ -609,115 +694,6 @@ nav li:first-child {
         width: 100%;
     }
 }
-
-/* 
----------------------------------------------
-Banner Style
---------------------------------------------- 
-*/
-
-.main-banner .item {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 220px 20% 320px 20%;
-    margin-top: 0px;
-}
-
-.main-banner .item-1 {
-    background-image: url(./assets/images/banner-01.jpg);
-}
-
-.main-banner .item-2 {
-    background-image: url(./assets/images/banner-02.jpg);
-}
-
-.main-banner .item-3 {
-    background-image: url(./assets/images/banner-03.jpg);
-}
-
-.main-banner .item span.category {
-    background-color: #fff;
-    color: #1e1e1e;
-    font-size: 16px;
-    font-weight: 500;
-    text-transform: capitalize;
-    padding: 6px 15px;
-    display: inline-block;
-    margin-bottom: 30px;
-}
-
-.main-banner .item span.category em {
-    font-style: normal;
-    color: #f35525;
-}
-
-.main-banner .item h2 {
-    font-size: 62px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #fff;
-    line-height: 72px;
-    width: 50%;
-    margin-bottom: 0px;
-}
-
-.main-banner .owl-dots {
-    position: absolute;
-    bottom: 60px;
-    left: 20%;
-}
-
-.main-banner .owl-dots .owl-dot {
-    width: 10px;
-    height: 10px;
-    background-color: #fff;
-    border-radius: 50%;
-    margin-right: 10px;
-    transition: all .5s;
-}
-
-.main-banner .owl-dots .active {
-    background-color: #f35525;
-}
-
-.main-banner .owl-nav {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    transform: translateY(-50px);
-}
-
-.main-banner .owl-nav .owl-prev i,
-.main-banner .owl-nav .owl-next i {
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    font-size: 24px;
-    display: inline-block;
-    color: #fff;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    opacity: 1;
-    transition: all .3s;
-}
-
-.main-banner .owl-nav .owl-prev i {
-    position: absolute;
-    left: 45px;
-}
-
-.main-banner .owl-nav .owl-next i {
-    position: absolute;
-    right: 45px;
-}
-
-.main-banner .owl-nav .owl-prev i:hover,
-.main-banner .owl-nav .owl-next i:hover {
-    opacity: 1;
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
 
 /* 
 ---------------------------------------------
