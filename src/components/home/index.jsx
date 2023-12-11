@@ -174,7 +174,7 @@ const Hero = () => {
                       <h2 className="timer count-title count-number" data-to="34" data-speed="1000"></h2>
                       <p className="count-text ">Buildings<br />Finished Now</p>
                     </div>
-                  </div>
+                  </div>  
                   <div className="col-lg-4">
                     <div className="counter">
                       <h2 className="timer count-title count-number" data-to="12" data-speed="1000"></h2>
@@ -386,6 +386,7 @@ const Hero = () => {
                         </div>
                       </div>
                     </div>
+                    
                   </div>
                 </div>
               </div>
