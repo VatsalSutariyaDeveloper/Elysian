@@ -7,6 +7,20 @@
 @tailwind components;
 @tailwind utilities;
 
+*::-webkit-scrollbar {
+    width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #000;
+    border-radius: 10px;
+    border: 0px solid #000;
+}
+
 /*
 
 591 villa agency
@@ -860,7 +874,7 @@ Video Style
     text-align: center;
     line-height: 52px;
     color: #2a9d8f;
-    outline: 15px solid rgba(254, 85, 37, 0.5);
+    outline: 15px solid #63b7ad;
     font-size: 18px;
 }
 
@@ -1206,7 +1220,7 @@ footer.footer-no-gap {
 }
 
 footer {
-    margin-top: 100px;
+    margin-top: 10px;
     background-color: #1e1e1e;
     min-height: 100px;
     margin-bottom: 0px;

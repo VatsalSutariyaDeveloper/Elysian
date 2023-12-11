@@ -21,7 +21,7 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import { faCalendar } from '@fortawesome/free-regular-svg-icons'
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import properties_data from '../pages/PropertiesData';
-import { Link,NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const images = [
   { img: banner1, city: "Toronto", country: "Canada", text1: `Hurry! Get the Best Villa for you` },
@@ -138,18 +138,6 @@ const Hero = () => {
               </div>
               <div className="accordion" id="accordionExample">
                 <div className="accordion-item">
-                  <h2 className="accordion-header" id="headingOne">
-                    <button className="accordion-button" type="button" aria-expanded="true" aria-controls="collapseOne">
-                      Best useful links ?
-                    </button>
-                  </h2>
-                  <div id="collapseOne" className="accordion-collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div className="accordion-body">
-                      Get <strong>the best villa</strong> website template in HTML CSS and Bootstrap htmlFor your business. TemplateMo provides you the <Link to="https://www.google.com/search?q=best+free+css+templates" target="_blank">best free CSS templates</Link> in the world. Please tell your friends about it.
-                    </div>
-                  </div>
-                </div>
-                <div className="accordion-item">
                   <h2 className="accordion-header" id="headingTwo">
                     <button className="accordion-button collapsed" type="button" aria-expanded="false" aria-controls="collapseTwo">
                       How does this work ?
@@ -175,7 +163,7 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-              
+
             <div className="col-lg-3">
               <div className="info-table">
                 <ul>
@@ -399,7 +387,7 @@ const Hero = () => {
                             next level humblebrag swag franzen.
                           </p>
                           <div className="icon-button">
-                          <NavLink to="/properties">
+                            <NavLink to="/properties">
                               <i><FontAwesomeIcon icon={faCalendar} /></i> Schedule a visit
                             </NavLink>
                           </div>
@@ -443,8 +431,8 @@ const Hero = () => {
                             next level humblebrag swag franzen.
                           </p>
                           <div className="icon-button">
-                          <NavLink to="/properties">
-                            <i><FontAwesomeIcon icon={faCalendar} /></i> Schedule a visit
+                            <NavLink to="/properties">
+                              <i><FontAwesomeIcon icon={faCalendar} /></i> Schedule a visit
                             </NavLink>
                           </div>
                         </div>
