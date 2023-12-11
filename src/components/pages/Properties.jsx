@@ -85,7 +85,7 @@ const Properties = () => {
                         <li>
                             <Link className={activeCategory === 'Villa House' ? 'is_active' : ''} onClick={() => handleCategoryChange('Villa House')}>
                                 Villa House
-                            </Link>
+                            </Link >
                         </li>
                         <li>
                             <Link className={activeCategory === 'Penthouse' ? 'is_active' : ''} onClick={() => handleCategoryChange('Penthouse')}>
