@@ -1,6 +1,20 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import properties_data from './PropertiesData';
+import icon1 from '../../assets/images/info-icon-01.png';
+import icon2 from '../../assets/images/info-icon-02.png';
+import icon3 from '../../assets/images/info-icon-03.png';
+import icon4 from '../../assets/images/info-icon-04.png';
+
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import deal1 from '../../assets/images/deal-01.jpg'
+import deal2 from '../../assets/images/deal-02.jpg'
+import deal3 from '../../assets/images/deal-03.jpg'
+import { faCalendar } from '@fortawesome/free-regular-svg-icons'
+import { Link } from 'react-router-dom'
+
 const PropertyDetails = () => {
     const { id } = useParams();
 
@@ -85,7 +99,7 @@ const PropertyDetails = () => {
                             <div className="info-table">
                                 <ul>
                                     <li>
-                                        <img src="assets/images/info-icon-01.png" alt="" style={{ maxWidth: '52px' }} />
+                                        <img src={icon1} alt="" style={{ maxWidth: '52px' }} />
                                         <h4>
                                             {property.area}
                                             <br />
@@ -93,7 +107,7 @@ const PropertyDetails = () => {
                                         </h4>
                                     </li>
                                     <li>
-                                        <img src="assets/images/info-icon-02.png" alt="" style={{ maxWidth: '52px' }} />
+                                        <img src={icon2} alt="" style={{ maxWidth: '52px' }} />
                                         <h4>
                                             Contract
                                             <br />
@@ -101,7 +115,7 @@ const PropertyDetails = () => {
                                         </h4>
                                     </li>
                                     <li>
-                                        <img src="assets/images/info-icon-03.png" alt="" style={{ maxWidth: '52px' }} />
+                                        <img src={icon3} alt="" style={{ maxWidth: '52px' }} />
                                         <h4>
                                             {property.price}
                                             <br />
@@ -109,7 +123,7 @@ const PropertyDetails = () => {
                                         </h4>
                                     </li>
                                     <li>
-                                        <img src="assets/images/info-icon-04.png" alt="" style={{ maxWidth: '52px' }} />
+                                        <img src={icon4} alt="" style={{ maxWidth: '52px' }} />
                                         <h4>
                                             {property.floor}
                                             <br />
@@ -135,146 +149,185 @@ const PropertyDetails = () => {
                         <div className="col-lg-12">
                             <div className="tabs-content">
                                 <div className="row">
-                                    <div className="nav-wrapper ">
+                                    <div className="nav-wrapper">
                                         <ul className="nav nav-tabs" role="tablist">
                                             <li className="nav-item" role="presentation">
-                                                <button className="nav-link active" id="appartment-tab" data-bs-toggle="tab" data-bs-target="#appartment" type="button" role="tab" aria-controls="appartment" aria-selected="true">
+                                                <button
+                                                    className="nav-link active"
+                                                    id="appartment-tab"
+                                                    data-bs-toggle="tab"
+                                                    data-bs-target="#appartment"
+                                                    type="button"
+                                                    role="tab"
+                                                    aria-controls="appartment"
+                                                    aria-selected="true"
+                                                >
                                                     Appartment
                                                 </button>
                                             </li>
                                             <li className="nav-item" role="presentation">
-                                                <button className="nav-link" id="villa-tab" data-bs-toggle="tab" data-bs-target="#villa" type="button" role="tab" aria-controls="villa" aria-selected="false">
+                                                <button
+                                                    className="nav-link"
+                                                    id="villa-tab"
+                                                    data-bs-toggle="tab"
+                                                    data-bs-target="#villa"
+                                                    type="button"
+                                                    role="tab"
+                                                    aria-controls="villa"
+                                                    aria-selected="false"
+                                                >
                                                     Villa House
                                                 </button>
                                             </li>
                                             <li className="nav-item" role="presentation">
-                                                <button className="nav-link" id="penthouse-tab" data-bs-toggle="tab" data-bs-target="#penthouse" type="button" role="tab" aria-controls="penthouse" aria-selected="false">
+                                                <button
+                                                    className="nav-link"
+                                                    id="penthouse-tab"
+                                                    data-bs-toggle="tab"
+                                                    data-bs-target="#penthouse"
+                                                    type="button"
+                                                    role="tab"
+                                                    aria-controls="penthouse"
+                                                    aria-selected="false"
+                                                >
                                                     Penthouse
                                                 </button>
                                             </li>
                                         </ul>
                                     </div>
                                     <div className="tab-content" id="myTabContent">
-                                        <div className="tab-pane fade show active" id="appartment" role="tabpanel" aria-labelledby="appartment-tab">
+                                        {/* Appartment Tab */}
+                                        <div
+                                            className="tab-pane fade show active"
+                                            id="appartment"
+                                            role="tabpanel"
+                                            aria-labelledby="appartment-tab"
+                                        >
                                             <div className="row">
                                                 <div className="col-lg-3">
                                                     <div className="info-table">
                                                         <ul>
-                                                            <li>
-                                                                Total Flat Space <span>540 m2</span>
-                                                            </li>
-                                                            <li>
-                                                                Floor number <span>3</span>
-                                                            </li>
-                                                            <li>
-                                                                Number of rooms <span>8</span>
-                                                            </li>
-                                                            <li>
-                                                                Parking Available <span>Yes</span>
-                                                            </li>
-                                                            <li>
-                                                                Payment Process <span>Bank</span>
-                                                            </li>
+                                                            <li>Total Flat Space <span>185 m2</span></li>
+                                                            <li>Floor number <span>26th</span></li>
+                                                            <li>Number of rooms <span>4</span></li>
+                                                            <li>Parking Available <span>Yes</span></li>
+                                                            <li>Payment Process <span>Bank</span></li>
                                                         </ul>
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-6">
-                                                    <img src="assets/images/deal-01.jpg" alt="" />
+                                                    <img src={deal1} alt="" />
                                                 </div>
                                                 <div className="col-lg-3">
-                                                    <h4>All Info About Apartment</h4>
+                                                    <h4>Extra Info About Property</h4>
                                                     <p>
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, do eiusmod tempor pack incididunt ut labore et dolore magna aliqua quised ipsum suspendisse. <br />
-                                                        <br />Swag fanny pack lyft blog twee. JOMO ethical copper mug, succulents typewriter shaman DIY kitsch twee taiyaki fixie hella venmo after messenger poutine next level humblebrag swag franzen.
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                        elit, do eiusmod tempor pack incididunt ut labore et
+                                                        dolore magna aliqua quised ipsum suspendisse.
+                                                        <br />
+                                                        <br />
+                                                        When you need free CSS templates, you can simply
+                                                        type TemplateMo in any search engine website. In
+                                                        addition, you can type TemplateMo Portfolio,
+                                                        TemplateMo One Page Layouts, etc.
                                                     </p>
                                                     <div className="icon-button">
-                                                        <a href="#">
-                                                            <i className="fa fa-calendar"></i> Schedule a visit
-                                                        </a>
+                                                        <Link to="property-details">
+                                                            <i><FontAwesomeIcon icon={faCalendar} /></i> Schedule a visit
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="tab-pane fade" id="villa" role="tabpanel" aria-labelledby="villa-tab">
+
+                                        {/* Villa Tab */}
+                                        <div
+                                            className="tab-pane fade"
+                                            id="villa"
+                                            role="tabpanel"
+                                            aria-labelledby="villa-tab"
+                                        >
                                             <div className="row">
                                                 <div className="col-lg-3">
                                                     <div className="info-table">
                                                         <ul>
-                                                            <li>
-                                                                Total Flat Space <span>250 m2</span>
-                                                            </li>
-                                                            <li>
-                                                                Floor number <span>26th</span>
-                                                            </li>
-                                                            <li>
-                                                                Number of rooms <span>5</span>
-                                                            </li>
-                                                            <li>
-                                                                Parking Available <span>Yes</span>
-                                                            </li>
-                                                            <li>
-                                                                Payment Process <span>Bank</span>
-                                                            </li>
+                                                            <li>Total Flat Space <span>250 m2</span></li>
+                                                            <li>Floor number <span>26th</span></li>
+                                                            <li>Number of rooms <span>5</span></li>
+                                                            <li>Parking Available <span>Yes</span></li>
+                                                            <li>Payment Process <span>Bank</span></li>
                                                         </ul>
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-6">
-                                                    <img src="assets/images/deal-02.jpg" alt="" />
+                                                    <img src={deal2} alt="" />
                                                 </div>
                                                 <div className="col-lg-3">
-                                                    <h4>Detail Info About New Villa</h4>
+                                                    <h4>Detail Info About Villa</h4>
                                                     <p>
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, do eiusmod tempor pack incididunt ut labore et dolore magna aliqua quised ipsum suspendisse. <br />
-                                                        <br />Swag fanny pack lyft blog twee. JOMO ethical copper mug, succulents typewriter shaman DIY kitsch twee taiyaki fixie hella venmo after messenger poutine next level humblebrag swag franzen.
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                        elit, do eiusmod tempor pack incididunt ut labore et
+                                                        dolore magna aliqua quised ipsum suspendisse.
+                                                        <br />
+                                                        <br />
+                                                        Swag fanny pack lyft blog twee. JOMO ethical copper
+                                                        mug, succulents typewriter shaman DIY kitsch twee
+                                                        taiyaki fixie hella venmo after messenger poutine
+                                                        next level humblebrag swag franzen.
                                                     </p>
                                                     <div className="icon-button">
-                                                        <a href="#">
-                                                            <i className="fa fa-calendar"></i> Schedule a visit
-                                                        </a>
+                                                        <Link to="property-details">
+                                                            <i><FontAwesomeIcon icon={faCalendar} /></i> Schedule a visit
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="tab-pane fade" id="penthouse" role="tabpanel" aria-labelledby="penthouse-tab">
+
+                                        {/* Penthouse Tab */}
+                                        <div
+                                            className="tab-pane fade"
+                                            id="penthouse"
+                                            role="tabpanel"
+                                            aria-labelledby="penthouse-tab"
+                                        >
                                             <div className="row">
                                                 <div className="col-lg-3">
                                                     <div className="info-table">
                                                         <ul>
-                                                            <li>
-                                                                Total Flat Space <span>320 m2</span>
-                                                            </li>
-                                                            <li>
-                                                                Floor number <span>34th</span>
-                                                            </li>
-                                                            <li>
-                                                                Number of rooms <span>6</span>
-                                                            </li>
-                                                            <li>
-                                                                Parking Available <span>Yes</span>
-                                                            </li>
-                                                            <li>
-                                                                Payment Process <span>Bank</span>
-                                                            </li>
+                                                            <li>Total Flat Space <span>320 m2</span></li>
+                                                            <li>Floor number <span>34th</span></li>
+                                                            <li>Number of rooms <span>6</span></li>
+                                                            <li>Parking Available <span>Yes</span></li>
+                                                            <li>Payment Process <span>Bank</span></li>
                                                         </ul>
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-6">
-                                                    <img src="assets/images/deal-03.jpg" alt="" />
+                                                    <img src={deal3} alt="" />
                                                 </div>
                                                 <div className="col-lg-3">
                                                     <h4>Extra Info About Penthouse</h4>
                                                     <p>
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, do eiusmod tempor pack incididunt ut Kinfolk tonx seitan crucifix 3 wolf moon bicycle rights keffiyeh snackwave wolf same vice, chillwave vexillologistlabore et dolore magna aliqua quised ipsum suspendisse. <br />
-                                                        <br />Swag fanny pack lyft blog twee. JOMO ethical copper mug, succulents typewriter shaman DIY kitsch twee taiyaki fixie hella venmo after messenger poutine next level humblebrag swag franzen.
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                        elit, do eiusmod tempor pack incididunt ut labore et
+                                                        dolore magna aliqua quised ipsum suspendisse.
+                                                        <br />
+                                                        <br />
+                                                        Swag fanny pack lyft blog twee. JOMO ethical copper
+                                                        mug, succulents typewriter shaman DIY kitsch twee
+                                                        taiyaki fixie hella venmo after messenger poutine
+                                                        next level humblebrag swag franzen.
                                                     </p>
                                                     <div className="icon-button">
-                                                        <a href="#">
-                                                            <i className="fa fa-calendar"></i> Schedule a visit
-                                                        </a>
+                                                        <Link to="property-details">
+                                                            <i><FontAwesomeIcon icon={faCalendar} /></i> Schedule a visit
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>

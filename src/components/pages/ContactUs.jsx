@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import phoneImg from '../../assets/images/phone-icon.png';
 import emailImg from '../../assets/images/email-icon.png';
 import '../../index.css'
-
+import { NavLink } from 'react-router-dom';
 import iziToast from 'izitoast';
 
 import 'izitoast/dist/css/iziToast.min.css';
@@ -64,14 +64,35 @@ const ContactUs = () => {
                 [e.target.name]: e.target.value,
             });
         };
+        const [loading, setLoading] = useState(true);
 
+        useEffect(() => {
+            const timeout = setTimeout(() => {
+                setLoading(false);
+            }, 800);
+            return () => clearTimeout(timeout);
+        }, []);
+    
+        if (loading) {
+            return <div id="js-preloader" class="js-preloader">
+                <div class="preloader-inner">
+                    <span class="dot"></span>
+                    <div class="dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>;
+        }
         return (
             <>
                 <div className="page-heading header-text">
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
-                                <span className="breadcrumb"><a href="#">Home</a>  /  Contact Us</span>
+                                <span className="breadcrumb">
+                                  <NavLink to={'/'}>Home</NavLink> / Contact Us</span>
                                 <h3>Contact Us</h3>
                             </div>
                         </div>
