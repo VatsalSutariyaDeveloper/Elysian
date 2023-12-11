@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Isotope from 'isotope-layout';
-
 import videoFrame from '../../assets/images/video-frame.jpg'
 import featuredIcon from '../../assets/images/featured-icon.png'
 import featured from '../../assets/images/featured.jpg'
@@ -20,41 +21,103 @@ import property5 from '../../assets/images/property-05.jpg'
 import property6 from '../../assets/images/property-06.jpg'
 import phoneImg from '../../assets/images/phone-icon.png'
 import emailImg from '../../assets/images/email-icon.png'
+import banner1 from '../../assets/images/banner-01.jpg'
+import banner2 from '../../assets/images/banner-02.jpg'
+import banner3 from '../../assets/images/banner-03.jpg'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import { faCalendar } from '@fortawesome/free-regular-svg-icons'
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom'
 
+const images = [
+  { img: banner1, city: "Toronto", country: "Canada", text1: `Hurry! Get the Best Villa for you` },
+  { img: banner2, city: "Melbourne", country: "Australia", text1: `Be Quick! Get the best villa in town` },
+  { img: banner3, city: "Miami", country: "South Florida", text1: `Act Now! Get the penthouse` },
+];
+
 const Hero = () => {
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    const elem = document.querySelector('.properties-box');
-    const filtersElem = document.querySelector('.properties-filter');
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 800);
 
-    if (elem) {
-      const rdnEventsList = new Isotope(elem, {
-        itemSelector: '.properties-items',
-        layoutMode: 'masonry'
-      });
-
-      if (filtersElem) {
-        filtersElem.addEventListener('click', function (event) {
-          if (!event.target.matches('a')) {
-            return;
-          }
-
-          const filterValue = event.target.getAttribute('data-filter');
-          rdnEventsList.arrange({
-            filter: filterValue
-          });
-
-          filtersElem.querySelector('.is_active').classList.remove('is_active');
-          event.target.classList.add('is_active');
-          event.preventDefault();
-        });
-      }
-    }
+    return () => clearTimeout(timeout);
   }, []);
+
+  if (loading) {
+    return <div id="js-preloader" class="js-preloader">
+      <div class="preloader-inner">
+        <span class="dot"></span>
+        <div class="dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>;
+  }
   return (
     <>
+      <div className="relative">
+        <div className="carousel-container">
+          <Carousel
+            showIndicators={true}
+            showThumbs={false}
+            showStatus={false}
+            autoPlay
+            infiniteLoop
+            renderArrowNext={(clickHandler, hasNext) => {
+              return (
+                hasNext && (
+                  <button className="nav_btn nav_btn_right" onClick={clickHandler}>
+                    <FontAwesomeIcon icon={faAngleRight} />
+                  </button>
+                )
+              );
+            }}
+            renderArrowPrev={(clickHandler, hasNext) => {
+              return (
+                hasNext && (
+                  <button onClick={clickHandler} className="nav_btn nav_btn_left">
+                    <FontAwesomeIcon icon={faAngleLeft} />
+                  </button>
+                )
+              );
+            }}
+            renderIndicator={(clickHandler, isSelected, index) => {
+              return (
+                <li
+                  onClick={clickHandler}
+                  className={`ind ${isSelected ? "active" : ""}`}
+                  key={index}
+                  role="button"
+                />
+              );
+            }}
+          >
+            {images.map(({ img, text1, city, country }, index) => (
+              <div className="slide relative" key={index}>
+                <img alt={`sample_file_${index}`} src={img} />
+                <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
+                  <div className="text-white text-4xl font-bold bg-center bg-no-repeat bg-cover md:pr-20 lg:pb-320 md:pl-20 mt-0">
+                    <span className="bg-white text-[#1e1e1e] text-base font-semibold capitalize p-2 inline-block mb-30">
+                      <span className='text-black'>{city},</span> <em className="text-[#f35525]"> {country}</em>
+                    </span>
+                    <p className="text-sm md:text-[60px] font-extrabold uppercase text-white mt-9">
+                      {text1}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+          </Carousel>
+        </div >
+      </div >
+
+
       <div className="featured section">
         <div className="container">
           <div className="row">
@@ -62,7 +125,7 @@ const Hero = () => {
               <div className="left-image">
                 <img src={featured} alt="" />
                 <Link to="property-details">
-                  <img src={featuredIcon} alt="" style={{ maxWidth: '52px', padding: '0px' }} />
+                  <img src={featuredIcon} alt="" style={{ marginLeft: '30px', marginTop: "22px", maxWidth: '60px', padding: '0px' }} />
                 </Link>
               </div>
             </div>

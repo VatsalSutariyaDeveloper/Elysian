@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import properties_data from './PropertiesData';
 
@@ -26,6 +26,27 @@ const Properties = () => {
             setCurrentPage(page);
         }
     };
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setLoading(false);
+        }, 800);
+        return () => clearTimeout(timeout);
+    }, []);
+
+    if (loading) {
+        return <div id="js-preloader" class="js-preloader">
+            <div class="preloader-inner">
+                <span class="dot"></span>
+                <div class="dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>;
+    }
 
     return (
         <>
