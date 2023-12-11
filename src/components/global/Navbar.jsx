@@ -53,7 +53,6 @@ const Navbar = () => {
                     </Link></li>
                     <li className='hide-on-mobile'><NavLink to="/">Home</NavLink></li>
                     <li className='hide-on-mobile'><NavLink to="/properties">Properties</NavLink></li>
-                    <li className='hide-on-mobile'><NavLink to="/property-detail">Property Details</NavLink></li>
                     <li className='hide-on-mobile'><NavLink to="/contact-us">Contact Us</NavLink></li>
                     <li className='hide-on-mobile schedule-visit'><Link to="#"><i><FontAwesomeIcon icon={faCalendar} /></i>Schedule a visit</Link></li>
                     <li className='menu-button' onClick={handleMenuToggle}><Link to="#"><i><FontAwesomeIcon icon={faInstagram} /></i></Link></li>
