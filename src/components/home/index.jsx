@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Isotope from 'isotope-layout';
 import videoFrame from '../../assets/images/video-frame.jpg'
 import featuredIcon from '../../assets/images/featured-icon.png'
 import featured from '../../assets/images/featured.jpg'
@@ -13,12 +12,6 @@ import infoIcon1 from '../../assets/images/info-icon-01.png'
 import infoIcon2 from '../../assets/images/info-icon-02.png'
 import infoIcon3 from '../../assets/images/info-icon-03.png'
 import infoIcon4 from '../../assets/images/info-icon-04.png'
-import property1 from '../../assets/images/property-01.jpg'
-import property2 from '../../assets/images/property-02.jpg'
-import property3 from '../../assets/images/property-03.jpg'
-import property4 from '../../assets/images/property-04.jpg'
-import property5 from '../../assets/images/property-05.jpg'
-import property6 from '../../assets/images/property-06.jpg'
 import phoneImg from '../../assets/images/phone-icon.png'
 import emailImg from '../../assets/images/email-icon.png'
 import banner1 from '../../assets/images/banner-01.jpg'
@@ -27,6 +20,7 @@ import banner3 from '../../assets/images/banner-03.jpg'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import { faCalendar } from '@fortawesome/free-regular-svg-icons'
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import properties_data from '../pages/PropertiesData';
 import { Link,NavLink } from 'react-router-dom'
 
 const images = [
@@ -37,7 +31,8 @@ const images = [
 
 const Hero = () => {
   const [loading, setLoading] = useState(true);
-
+  const [activeCategory, setActiveCategory] = useState('all');
+  const [currentPage, setCurrentPage] = useState(1);
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
@@ -58,6 +53,13 @@ const Hero = () => {
       </div>
     </div>;
   }
+
+  const filteredProperties = activeCategory === 'all' ? properties_data : properties_data.filter(property => property.category === activeCategory);
+
+  const handleCategoryChange = (category) => {
+    setActiveCategory(category);
+  };
+
   return (
     <>
       <div className="relative">
@@ -132,27 +134,28 @@ const Hero = () => {
             <div className="col-lg-5">
               <div className="section-heading">
                 <h6>| Featured</h6>
-                <h2>Best Appartment &amp; Sea view</h2>
+                <h2>Best Apartment &amp; Sea view</h2>
               </div>
               <div className="accordion" id="accordionExample">
                 <div className="accordion-item">
                   <h2 className="accordion-header" id="headingOne">
-                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <button className="accordion-button" type="button" aria-expanded="true" aria-controls="collapseOne">
                       Best useful links ?
                     </button>
                   </h2>
-                  <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div id="collapseOne" className="accordion-collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div className="accordion-body">
-                      Get <strong>the best villa</strong> website template in HTML CSS and Bootstrap htmlFor your business. TemplateMo provides you the <Link to="https://www.google.com/search?q=best+free+css+templates" target="_blank">best free CSS templates</Link> in the world. Please tell your friends about it.</div>
+                      Get <strong>the best villa</strong> website template in HTML CSS and Bootstrap htmlFor your business. TemplateMo provides you the <Link to="https://www.google.com/search?q=best+free+css+templates" target="_blank">best free CSS templates</Link> in the world. Please tell your friends about it.
+                    </div>
                   </div>
                 </div>
                 <div className="accordion-item">
                   <h2 className="accordion-header" id="headingTwo">
-                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <button className="accordion-button collapsed" type="button" aria-expanded="false" aria-controls="collapseTwo">
                       How does this work ?
                     </button>
                   </h2>
-                  <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div id="collapseTwo" className="accordion-collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                     <div className="accordion-body">
                       Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </div>
@@ -160,11 +163,11 @@ const Hero = () => {
                 </div>
                 <div className="accordion-item">
                   <h2 className="accordion-header" id="headingThree">
-                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <button className="accordion-button collapsed" type="button" aria-expanded="false" aria-controls="collapseThree">
                       Why is Villa Agency the best ?
                     </button>
                   </h2>
-                  <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div id="collapseThree" className="accordion-collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                     <div className="accordion-body">
                       Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </div>
@@ -172,6 +175,7 @@ const Hero = () => {
                 </div>
               </div>
             </div>
+              
             <div className="col-lg-3">
               <div className="info-table">
                 <ul>
@@ -225,7 +229,6 @@ const Hero = () => {
         </div>
       </div>
 
-
       <div className="fun-facts">
         <div className="container">
           <div className="row">
@@ -234,20 +237,20 @@ const Hero = () => {
                 <div className="row">
                   <div className="col-lg-4">
                     <div className="counter">
-                      <h2 className="timer count-title count-number" data-to="34" data-speed="1000"></h2>
-                      <p className="count-text ">Buildings<br />Finished Now</p>
-                    </div>
-                  </div>  
-                  <div className="col-lg-4">
-                    <div className="counter">
-                      <h2 className="timer count-title count-number" data-to="12" data-speed="1000"></h2>
-                      <p className="count-text ">Years<br />Experience</p>
+                      <h2 className="timer count-title count-number font-montserrat font-bold" data-to="34" data-speed="1000">34</h2>
+                      <p className="count-text font-palanquin">Buildings<br />Finished Now</p>
                     </div>
                   </div>
                   <div className="col-lg-4">
                     <div className="counter">
-                      <h2 className="timer count-title count-number" data-to="24" data-speed="1000"></h2>
-                      <p className="count-text ">Awwards<br />Won 2023</p>
+                      <h2 className="timer count-title count-number font-montserrat font-bold" data-to="12" data-speed="1000">12</h2>
+                      <p className="count-text font-palanquin">Years<br />Experience</p>
+                    </div>
+                  </div>
+                  <div className="col-lg-4">
+                    <div className="counter">
+                      <h2 className="timer count-title count-number font-montserrat font-bold" data-to="24" data-speed="1000">24</h2>
+                      <p className="count-text font-palanquin">Awards<br />Won 2023</p>
                     </div>
                   </div>
                 </div>
@@ -256,8 +259,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
-
 
       <div className="section best-deal">
         <div className="container">
@@ -449,7 +450,7 @@ const Hero = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                   </div>
                 </div>
               </div>
@@ -470,112 +471,53 @@ const Hero = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col-lg-4 col-md-6">
-              <div className="item">
-                <Link to="property-details">
-                  <img src={property1} alt="" /></Link>
-                <span className="category">Luxury Villa</span>
-                <h6>$2.264.000</h6>
-                <h4><Link to="property-details">18 New Street Miami, OR 97219</Link></h4>
-                <ul>
-                  <li>Bedrooms: <span>8</span></li>
-                  <li>Bathrooms: <span>8</span></li>
-                  <li>Area: <span>545m2</span></li>
-                  <li>Floor: <span>3</span></li>
-                  <li>Parking: <span>6 spots</span></li>
+            <div className="section properties">
+              <div className="container">
+                <ul className="properties-filter">
+                  <li>
+                    <Link className={activeCategory === 'all' ? 'is_active' : ''} onClick={() => handleCategoryChange('all')}>
+                      Show All
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className={activeCategory === 'Apartment' ? 'is_active' : ''} onClick={() => handleCategoryChange('Apartment')}>
+                      Apartment
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className={activeCategory === 'Villa House' ? 'is_active' : ''} onClick={() => handleCategoryChange('Villa House')}>
+                      Villa House
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className={activeCategory === 'Penthouse' ? 'is_active' : ''} onClick={() => handleCategoryChange('Penthouse')}>
+                      Penthouse
+                    </Link>
+                  </li>
                 </ul>
-                <div className="main-button">
-                  <Link to="property-details">Schedule a visit</Link>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="item">
-                <Link to="property-details"><img src={property2} alt="" /></Link>
-                <span className="category">Luxury Villa</span>
-                <h6>$1.180.000</h6>
-                <h4><Link to="property-details">54 Mid Street Florida, OR 27001</Link></h4>
-                <ul>
-                  <li>Bedrooms: <span>6</span></li>
-                  <li>Bathrooms: <span>5</span></li>
-                  <li>Area: <span>450m2</span></li>
-                  <li>Floor: <span>3</span></li>
-                  <li>Parking: <span>8 spots</span></li>
-                </ul>
-                <div className="main-button">
-                  <Link to="property-details">Schedule a visit</Link>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="item">
-                <Link to="property-details"><img src={property3} alt="" /></Link>
-                <span className="category">Luxury Villa</span>
-                <h6>$1.460.000</h6>
-                <h4><Link to="property-details">26 Old Street Miami, OR 38540</Link></h4>
-                <ul>
-                  <li>Bedrooms: <span>5</span></li>
-                  <li>Bathrooms: <span>4</span></li>
-                  <li>Area: <span>225m2</span></li>
-                  <li>Floor: <span>3</span></li>
-                  <li>Parking: <span>10 spots</span></li>
-                </ul>
-                <div className="main-button">
-                  <Link to="property-details">Schedule a visit</Link>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="item">
-                <Link to="property-details"><img src={property4} alt="" /></Link>
-                <span className="category">Apartment</span>
-                <h6>$584.500</h6>
-                <h4><Link to="property-details">12 New Street Miami, OR 12650</Link></h4>
-                <ul>
-                  <li>Bedrooms: <span>4</span></li>
-                  <li>Bathrooms: <span>3</span></li>
-                  <li>Area: <span>125m2</span></li>
-                  <li>Floor: <span>25th</span></li>
-                  <li>Parking: <span>2 cars</span></li>
-                </ul>
-                <div className="main-button">
-                  <Link to="property-details">Schedule a visit</Link>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="item">
-                <Link to="property-details"><img src={property5} alt="" /></Link>
-                <span className="category">Penthouse</span>
-                <h6>$925.600</h6>
-                <h4><Link to="property-details">34 Beach Street Miami, OR 42680</Link></h4>
-                <ul>
-                  <li>Bedrooms: <span>4</span></li>
-                  <li>Bathrooms: <span>4</span></li>
-                  <li>Area: <span>180m2</span></li>
-                  <li>Floor: <span>38th</span></li>
-                  <li>Parking: <span>2 cars</span></li>
-                </ul>
-                <div className="main-button">
-                  <Link to="property-details">Schedule a visit</Link>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="item">
-                <Link to="property-details"><img src={property6} alt="" /></Link>
-                <span className="category">Modern Condo</span>
-                <h6>$450.000</h6>
-                <h4><Link to="property-details">22 New Street Portland, OR 16540</Link></h4>
-                <ul>
-                  <li>Bedrooms: <span>3</span></li>
-                  <li>Bathrooms: <span>2</span></li>
-                  <li>Area: <span>165m2</span></li>
-                  <li>Floor: <span>26th</span></li>
-                  <li>Parking: <span>3 cars</span></li>
-                </ul>
-                <div className="main-button">
-                  <Link to="property-details">Schedule a visit</Link>
+                <div className="row properties-box">
+                  {filteredProperties.map((property, index) => (
+                    <div key={index} className={`col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 ${property.category}`}>
+                      <Link to={`/properties-details/${property.index}`}>
+                        <div className="item">
+                          <img src={property.image} alt="" />
+                          <span className="category">Luxury Villa</span>
+                          <h6>{property.price}</h6>
+                          <h4>{property.address}</h4>
+                          <ul>
+                            <li>Bedrooms: <span>{property.bedrooms}</span></li>
+                            <li>Bathrooms: <span>{property.bathrooms}</span></li>
+                            <li>Area: <span>{property.area}</span></li>
+                            <li>Floor: <span>{property.floor}</span></li>
+                            <li>Parking: <span>{property.parking}</span></li>
+                          </ul>
+                          <div className="main-button">
+                            <Link to={`/properties-details/${property.index}`}>View Detail</Link>
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

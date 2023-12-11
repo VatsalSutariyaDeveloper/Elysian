@@ -23,7 +23,7 @@ const Navbar = () => {
                     <div className="row flex justify-between">
                         <div className="col-lg-8 col-md-8">
                             <ul className="info">
-                                <li><i><FontAwesomeIcon icon={faEnvelope} /></i> info@company.com</li>
+                                <li><i><FontAwesomeIcon icon={faEnvelope} /></i> elysianmiami@elysian.com</li>
                                 <li><i><FontAwesomeIcon icon={faMap} /></i> Sunny Isles Beach, FL 33160</li>
                             </ul>
                         </div>
