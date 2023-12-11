@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faFontAwesome, faFacebook, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faCalendar, faEnvelope, faMap } from '@fortawesome/free-regular-svg-icons'
@@ -42,19 +42,19 @@ const Navbar = () => {
             <nav className='header-area sticky'>
                 <ul className='sidebar'>
                     <li onClick={handleMenuClose}><Link to="#"><i><FontAwesomeIcon icon={faClose} /></i></Link></li>
-                    <li><Link to="#">Home</Link></li>
-                    <li><Link to="/properties">Properties</Link></li>
-                    <li><Link to="#">Property Details</Link></li>
-                    <li><Link to="/contact-us">Contact Us</Link></li>
+                    <li><NavLink to="/">Home</NavLink></li>
+                    <li><NavLink to="/properties">Properties</NavLink></li>
+                    <li><NavLink to="/property-detail">Property Details</NavLink></li>
+                    <li><NavLink to="/contact-us">Contact Us</NavLink></li>
                 </ul>
                 <ul>
                     <li><Link to="/" className="logo">
                         <h1>Villa</h1>
                     </Link></li>
-                    <li className='hide-on-mobile'><Link to="#">Home</Link></li>
-                    <li className='hide-on-mobile'><Link to="/properties">Properties</Link></li>
-                    <li className='hide-on-mobile'><Link to="#">Property Details</Link></li>
-                    <li className='hide-on-mobile'><Link to="/contact-us">Contact Us</Link></li>
+                    <li className='hide-on-mobile'><NavLink to="/">Home</NavLink></li>
+                    <li className='hide-on-mobile'><NavLink to="/properties">Properties</NavLink></li>
+                    <li className='hide-on-mobile'><NavLink to="/property-detail">Property Details</NavLink></li>
+                    <li className='hide-on-mobile'><NavLink to="/contact-us">Contact Us</NavLink></li>
                     <li className='hide-on-mobile schedule-visit'><Link to="#"><i><FontAwesomeIcon icon={faCalendar} /></i>Schedule a visit</Link></li>
                     <li className='menu-button' onClick={handleMenuToggle}><Link to="#"><i><FontAwesomeIcon icon={faInstagram} /></i></Link></li>
                 </ul>

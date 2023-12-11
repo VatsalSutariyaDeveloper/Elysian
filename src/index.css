@@ -436,7 +436,7 @@ Carousel Style
 .ind {
     width: 10px;
     height: 10px;
-    background-color: red;
+    background: transparent;
     list-style: none;
     border: 2px solid #f5f5f5;
     border-radius: 50%;
@@ -534,6 +534,9 @@ Header Style
 Main Navbar Style
 --------------------------------------------- 
 */
+.active {
+    color: #ee626b;
+}
 
 .header-area {
     padding: 10px 40px;
@@ -1201,6 +1204,7 @@ footer {
     margin-top: 150px;
     background-color: #1e1e1e;
     min-height: 100px;
+    margin-bottom: 0px;
 }
 
 footer p {

@@ -15,8 +15,6 @@ const ContactUs = () => {
         message: '',
     });
 
-
-
     const handleSubmit = (e) => {
         e.preventDefault();
     
