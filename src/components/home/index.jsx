@@ -27,7 +27,7 @@ import banner3 from '../../assets/images/banner-03.jpg'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import { faCalendar } from '@fortawesome/free-regular-svg-icons'
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom'
+import { Link,NavLink } from 'react-router-dom'
 
 const images = [
   { img: banner1, city: "Toronto", country: "Canada", text1: `Hurry! Get the Best Villa for you` },
@@ -218,7 +218,7 @@ const Hero = () => {
             <div className="col-lg-10 offset-lg-1">
               <div className="video-frame">
                 <img src={videoFrame} alt="" />
-                <Link to="https://youtube.com" target="_blank"><i><FontAwesomeIcon icon={faPlay} /></i></Link>
+                <Link to="https://youtu.be/OzUkvzyBttA?si=RjEVsa6MkX1IwCs1" target="_blank"><i><FontAwesomeIcon icon={faPlay} /></i></Link>
               </div>
             </div>
           </div>
@@ -354,9 +354,9 @@ const Hero = () => {
                             TemplateMo One Page Layouts, etc.
                           </p>
                           <div className="icon-button">
-                            <Link to="property-details">
+                            <NavLink to="/properties">
                               <i><FontAwesomeIcon icon={faCalendar} /></i> Schedule a visit
-                            </Link>
+                            </NavLink>
                           </div>
                         </div>
                       </div>
