@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import properties_data from './PropertiesData';
 import icon1 from '../../assets/images/info-icon-01.png';
 import icon2 from '../../assets/images/info-icon-02.png';
@@ -56,7 +56,7 @@ const PropertyDetails = () => {
                     <div className="row">
                         <div className="col-lg-12">
                             <span className="breadcrumb">
-                                <a href="#">Home</a> / Single Property
+                                <NavLink to="/">Home</NavLink> / Single Property
                             </span>
                             <h3>Single Property</h3>
                         </div>

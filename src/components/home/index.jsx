@@ -461,28 +461,6 @@ const Hero = () => {
           <div className="row">
             <div className="section properties">
               <div className="container">
-                <ul className="properties-filter">
-                  <li>
-                    <Link className={activeCategory === 'all' ? 'is_active' : ''} onClick={() => handleCategoryChange('all')}>
-                      Show All
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className={activeCategory === 'Apartment' ? 'is_active' : ''} onClick={() => handleCategoryChange('Apartment')}>
-                      Apartment
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className={activeCategory === 'Villa House' ? 'is_active' : ''} onClick={() => handleCategoryChange('Villa House')}>
-                      Villa House
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className={activeCategory === 'Penthouse' ? 'is_active' : ''} onClick={() => handleCategoryChange('Penthouse')}>
-                      Penthouse
-                    </Link>
-                  </li>
-                </ul>
                 <div className="row properties-box">
                   {filteredProperties.map((property, index) => (
                     <div key={index} className={`col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 ${property.category}`}>
