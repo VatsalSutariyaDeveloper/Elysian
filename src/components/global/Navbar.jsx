@@ -49,7 +49,7 @@ const Navbar = () => {
                 </ul>
                 <ul>
                     <li><Link to="/" className="logo">
-                        <h1>Villa</h1>
+                        <h1>Elysian</h1>
                     </Link></li>
                     <li className='hide-on-mobile'><NavLink to="/">Home</NavLink></li>
                     <li className='hide-on-mobile'><NavLink to="/properties">Properties</NavLink></li>
