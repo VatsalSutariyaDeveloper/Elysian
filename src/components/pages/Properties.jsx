@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import properties_data from './PropertiesData';
+import { NavLink } from 'react-router-dom';
 
 const Properties = () => {
     const [activeCategory, setActiveCategory] = useState('all');
@@ -60,7 +61,7 @@ const Properties = () => {
                     <div className="row">
                         <div className="col-lg-12">
                             <span className="breadcrumb">
-                                <Link to="#">Home</Link> / Properties
+                            <NavLink to={'/'}>Home</NavLink> / Properties
                             </span>
                             <h3>Properties</h3>
                         </div>
