@@ -6,7 +6,7 @@ const Footer = () => {
             <footer>
                 <div className="container">
                     <div className="col-lg-8">
-                        <p>Copyright © Villa Agency Co., Ltd. All rights reserved.
+                        <p className='mb-0'>Copyright © Villa Agency Co., Ltd. All rights reserved.
                         </p>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import property1 from '../../assets/images/property-01.jpg'
 import property2 from '../../assets/images/property-02.jpg'
 import property3 from '../../assets/images/property-03.jpg'
@@ -8,6 +8,28 @@ import property6 from '../../assets/images/property-06.jpg'
 import { Link } from 'react-router-dom';
 
 const Properties = () => {
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setLoading(false);
+        }, 800);
+        return () => clearTimeout(timeout);
+    }, []);
+
+    if (loading) {
+        return <div id="js-preloader" class="js-preloader">
+            <div class="preloader-inner">
+                <span class="dot"></span>
+                <div class="dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>;
+    }
+
     return (
         <>
             <div className="page-heading header-text">

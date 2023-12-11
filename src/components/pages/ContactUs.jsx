@@ -15,12 +15,6 @@ const ContactUs = () => {
         message: '',
     });
 
-    const validateForm = () => {
-
-
-       
-    }
-
     const handleSubmit = (e) => {
         e.preventDefault();
     

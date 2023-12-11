@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -35,37 +35,29 @@ const images = [
   { img: banner3, city: "Miami", country: "South Florida", text1: `Act Now! Get the penthouse` },
 ];
 
-
 const Hero = () => {
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    const elem = document.querySelector('.properties-box');
-    const filtersElem = document.querySelector('.properties-filter');
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 800);
 
-    if (elem) {
-      const rdnEventsList = new Isotope(elem, {
-        itemSelector: '.properties-items',
-        layoutMode: 'masonry'
-      });
-
-      if (filtersElem) {
-        filtersElem.addEventListener('click', function (event) {
-          if (!event.target.matches('a')) {
-            return;
-          }
-
-          const filterValue = event.target.getAttribute('data-filter');
-          rdnEventsList.arrange({
-            filter: filterValue
-          });
-
-          filtersElem.querySelector('.is_active').classList.remove('is_active');
-          event.target.classList.add('is_active');
-          event.preventDefault();
-        });
-      }
-    }
+    return () => clearTimeout(timeout);
   }, []);
 
+  if (loading) {
+    return <div id="js-preloader" class="js-preloader">
+      <div class="preloader-inner">
+        <span class="dot"></span>
+        <div class="dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>;
+  }
   return (
     <>
       <div className="relative">
@@ -133,7 +125,7 @@ const Hero = () => {
               <div className="left-image">
                 <img src={featured} alt="" />
                 <Link to="property-details">
-                  <img src={featuredIcon} alt="" style={{ maxWidth: '52px', padding: '0px' }} />
+                  <img src={featuredIcon} alt="" style={{ marginLeft: '30px', marginTop: "22px", maxWidth: '60px', padding: '0px' }} />
                 </Link>
               </div>
             </div>
