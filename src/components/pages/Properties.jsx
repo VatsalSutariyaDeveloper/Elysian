@@ -97,7 +97,7 @@ const Properties = () => {
                         {paginatedProperties.map((property, index) => (
                             <div key={index} className={`col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 ${property.category}`}>
                                 <Link to={`/properties-details/${property.index}`}>
-                                    <div className="item">
+                                    <div className="item">  
                                         <img src={property.image} alt="" />
                                         <span className="category">{property.category}</span>
                                         <h6>{property.price}</h6>

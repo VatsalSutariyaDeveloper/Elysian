@@ -12,8 +12,6 @@ import infoIcon1 from '../../assets/images/info-icon-01.png'
 import infoIcon2 from '../../assets/images/info-icon-02.png'
 import infoIcon3 from '../../assets/images/info-icon-03.png'
 import infoIcon4 from '../../assets/images/info-icon-04.png'
-import phoneImg from '../../assets/images/phone-icon.png'
-import emailImg from '../../assets/images/email-icon.png'
 import banner1 from '../../assets/images/banner-01.jpg'
 import banner2 from '../../assets/images/banner-02.jpg'
 import banner3 from '../../assets/images/banner-03.jpg'
@@ -32,7 +30,6 @@ const images = [
 const Hero = () => {
   const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState('all');
-  const [currentPage, setCurrentPage] = useState(1);
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
