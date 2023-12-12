@@ -12,9 +12,9 @@ import infoIcon1 from '../../assets/images/info-icon-01.png'
 import infoIcon2 from '../../assets/images/info-icon-02.png'
 import infoIcon3 from '../../assets/images/info-icon-03.png'
 import infoIcon4 from '../../assets/images/info-icon-04.png'
-import banner1 from '../../assets/images/banner-01.jpg'
-import banner2 from '../../assets/images/banner-02.jpg'
-import banner3 from '../../assets/images/banner-03.jpg'
+import banner4 from '../../assets/images/banner4.jpg'
+import banner5 from '../../assets/images/banner5.jpg'
+import banner6 from '../../assets/images/banner6.jpg'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import { faCalendar } from '@fortawesome/free-regular-svg-icons'
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
@@ -22,9 +22,9 @@ import properties_data from '../pages/PropertiesData';
 import { Link, NavLink } from 'react-router-dom'
 
 const images = [
-  { img: banner1, city: "Toronto", country: "Canada", text1: `Hurry! Get the Best Villa for you` },
-  { img: banner2, city: "Melbourne", country: "Australia", text1: `Be Quick! Get the best villa in town` },
-  { img: banner3, city: "Miami", country: "South Florida", text1: `Act Now! Get the penthouse` },
+  { img: banner4, city: "Toronto", country: "Canada", text1: `Hurry! Get the Best Villa for you` },
+  { img: banner5, city: "Melbourne", country: "Australia", text1: `Be Quick! Get the best villa in town` },
+  { img: banner6, city: "Miami", country: "South Florida", text1: `Act Now! Get the penthouse` },
 ];
 
 const Hero = () => {
